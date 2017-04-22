@@ -1,0 +1,1438 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/freshworkstudio/gps-tracking-nodejs">gps-tracking (v1.0.10)</a>
+</h1>
+<h4>Let you work with some GPS trackers that connects through tcp.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gps-tracking">module gps-tracking</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.server">
+            function <span class="apidocSignatureSpan">gps-tracking.</span>server
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gps-tracking.</span>functions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gps-tracking.</span>main</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gps-tracking.</span>tk103</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gps-tracking.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gps-tracking.functions">module gps-tracking.functions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.broadcast">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>broadcast
+            <span class="apidocSignatureSpan">(message, sender)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.crc_itu_get_verification">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>crc_itu_get_verification
+            <span class="apidocSignatureSpan">(hex_data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.data_to_hex_array">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>data_to_hex_array
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.get_distance">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>get_distance
+            <span class="apidocSignatureSpan">(p1, p2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.hex_array_to_hex_str">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>hex_array_to_hex_str
+            <span class="apidocSignatureSpan">(hex_array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.hex_to_int">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>hex_to_int
+            <span class="apidocSignatureSpan">(hex_char)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.minute_to_decimal">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>minute_to_decimal
+            <span class="apidocSignatureSpan">(pos, pos_i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.parse_data">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>parse_data
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.parse_gps_data">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>parse_gps_data
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.rad">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>rad
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.send">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>send
+            <span class="apidocSignatureSpan">(socket, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.send_to">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>send_to
+            <span class="apidocSignatureSpan">(socket, cmd, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.str_pad">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>str_pad
+            <span class="apidocSignatureSpan">(input, length, string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.functions.sum_hex_array">
+            function <span class="apidocSignatureSpan">gps-tracking.functions.</span>sum_hex_array
+            <span class="apidocSignatureSpan">(hex_array)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gps-tracking.main">module gps-tracking.main</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.main.server">
+            function <span class="apidocSignatureSpan">gps-tracking.main.</span>server
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gps-tracking.main.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gps-tracking.server">module gps-tracking.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.server.server">
+            function <span class="apidocSignatureSpan">gps-tracking.</span>server
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.server.super_">
+            function <span class="apidocSignatureSpan">gps-tracking.server.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gps-tracking.tk103">module gps-tracking.tk103</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gps-tracking.tk103.adapter">
+            function <span class="apidocSignatureSpan">gps-tracking.tk103.</span>adapter
+            <span class="apidocSignatureSpan">(device)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gps-tracking.tk103.</span>compatible_hardware</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gps-tracking.tk103.</span>model_name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gps-tracking.tk103.</span>protocol</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gps-tracking" id="apidoc.module.gps-tracking">module gps-tracking</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.server" id="apidoc.element.gps-tracking.server">
+        function <span class="apidocSignatureSpan">gps-tracking.</span>server
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function server(opts, callback) {
+	if (!(this instanceof server))
+		return new server(opts, callback);
+	EventEmitter.call(this);
+	var defaults = {
+		debug:						false,
+		port:						8080,
+		device_adapter:				false
+	};
+
+	//Merge default options with user options
+	this.opts = extend(defaults, opts);
+
+	var thisServer = this;
+	this.devices = [];
+	this.db = false;
+
+	this.server = false;
+	this.availableAdapters = {
+		TK103:		'./adapters/tk103'
+	};
+
+	<span class="apidocCodeCommentSpan">/****************************
+	SOME FUNCTIONS
+	*****************************/
+</span>	/* */
+	this.setAdapter = function(adapter){
+		if (typeof adapter.adapter != 'function')
+			throw 'The adapter needs an adpater() method to start an instance of it';
+		this.device_adapter = adapter;
+	};
+
+	this.getAdapter = function() {
+		return this.device_adapter;
+	};
+
+	this.addAdaptar = function(model, Obj) {
+		this.availableAdapters.push(model);
+	};
+
+	this.init = function(cb) {
+		//Set debug
+		thisServer.setDebug(this.opts.debug);
+
+		/*****************************
+		DEVICE ADAPTER INITIALIZATION
+		******************************/
+		if (thisServer.opts.device_adapter === false)
+			throw 'The app don\'t set the device_adapter to use. Which model is sending data to this server?';
+
+		if (typeof thisServer.opts.device_adapter == 'string') {
+
+			//Check if the selected model has an available adapter registered
+			if (typeof this.availableAdapters[this.opts.device_adapter] == 'undefined')
+				throw 'The class adapter for ' + this.opts.device_adapter + ' doesn\'t exists';
+
+			//Get the adapter
+			var adapterFile = (this.availableAdapters[this.opts.device_adapter]);
+
+			this.setAdapter(require(adapterFile));
+
+		} else {
+			//IF THE APP PASS THE ADEPTER DIRECTLY
+			thisServer.setAdapter(this.opts.device_adapter);
+		}
+
+		thisServer.emit('before_init');
+		if (typeof cb == 'function') cb();
+		thisServer.emit('init');
+
+		/* FINAL INIT MESSAGE */
+		console.log('\n=================================================\nFRESHWORK GPS LISTENER running at port ' + thisServer.opts.port
+ + '\nEXPECTING DEVICE MODEL:  ' + thisServer.getAdapter().model_name + '\n=================================================\n');
+	};
+
+	this.addAdaptar = function(model,Obj){
+		this.adapters.push(model);
+	};
+
+	this.do_log = function (msg,from){
+		//If debug is disabled, return false
+		if(this.getDebug() === false)return false;
+
+		//If from parameter is not set, default is server.
+		if(typeof(from) == "undefined")from = "SERVER";
+
+		msg = "#" + from + ": " + msg;
+		console.log(msg);
+
+	};
+
+	/****************************************
+	SOME SETTERS &amp; GETTERS
+	****************************************/
+	this.setDebug = function(val){
+		this.debug = (val === true);
+	};
+
+	this.getDebug = function(){
+		return this.debug;
+	};
+
+
+
+	//Init app
+	this.init(function(){
+		/*************************************
+		AFTER INITIALIZING THE APP...
+		*************************************/
+		thisServer.server = net.createServer(function (connection) {
+			//Now we are listening!
+
+			//We create an new device and give the an adapter to parse the incomming messages
+			connection.device = new Device(thisServer.getAdapter(),connection,thisServer);
+			thisServer.devices.push(connection);
+
+
+			//Once we receive data...
+			connection.on('data', function (data) {
+				connection.device.emit("data",data);
+			});
+
+			// Remove the device from the list when it leaves
+			connection.on('end', function () {
+				thisServer.devices.splice(thisServer.devices.indexOf(connection), 1);
+				connection.device.emit("disconnected");
+			});
+
+			callback(connection.device,connection);
+
+			connection.device.emit('connected');
+		}).listen(opts.port);
+	});
+
+	/* Search a device by ID */
+	this.find_device = function(device_id){
+		for(var i in this.devices){
+			var dev = this.devices[i].device;
+			if(dev.uid == device_id)return dev;
+		}
+		return false;
+	};
+
+	/* SEND A MESSAGE TO DEVICE ID X */
+	this.send_to = function(device_id,msg){
+		var dev = this.find_device(device_id);
+		dev.send(msg);
+	};
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var options = {
+    'debug'                 : true,
+    'port'                  : 8090,
+    'device_adapter'        : "TK103"
+}
+
+var server = gps.<span class="apidocCodeKeywordSpan">server</span>(options,function(device,connection){
+
+    device.on("login_request",function(device_id,msg_parts){
+
+// Some devices sends a login request before transmitting their position
+// Do some stuff before authenticate the device...
+
+// Accept the login request. You can set false to reject the device.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gps-tracking.functions" id="apidoc.module.gps-tracking.functions">module gps-tracking.functions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.broadcast" id="apidoc.element.gps-tracking.functions.broadcast">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>broadcast
+        <span class="apidocSignatureSpan">(message, sender)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">broadcast = function (message, sender) {
+	clients.forEach(function (client) {
+	  if (client === sender) return;
+	  client.write(message);
+	});
+	process.stdout.write(message+"\n");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.crc_itu_get_verification" id="apidoc.element.gps-tracking.functions.crc_itu_get_verification">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>crc_itu_get_verification
+        <span class="apidocSignatureSpan">(hex_data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">crc_itu_get_verification = function (hex_data){
+	var crc16 = require("crc-itu").crc16;
+	if(typeof(hex_data) == "String")str = hex_data
+	else str = exports.hex_array_to_hex_str(hex_data);
+	return crc16(str, 'hex');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.data_to_hex_array" id="apidoc.element.gps-tracking.functions.data_to_hex_array">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>data_to_hex_array
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">data_to_hex_array = function (data){
+		var arr = [];
+		for (var i  = 0; i &lt; data.length; i++)arr.push( data[i].toString(16));
+		return arr;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.get_distance" id="apidoc.element.gps-tracking.functions.get_distance">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>get_distance
+        <span class="apidocSignatureSpan">(p1, p2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_distance = function (p1, p2) {
+	var R = 6378137; // Earthâ€™s mean radius in meter
+	var dLat = exports.rad(p2.lat - p1.lat);
+	var dLong = exports.rad(p2.lng - p1.lng);
+	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+	Math.cos(exports.rad(p1.lat)) * Math.cos(exports.rad(p2.lat)) *
+	Math.sin(dLong / 2) * Math.sin(dLong / 2);
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+	var d = R * c;
+	return d; // returns the distance in meter
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.hex_array_to_hex_str" id="apidoc.element.gps-tracking.functions.hex_array_to_hex_str">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>hex_array_to_hex_str
+        <span class="apidocSignatureSpan">(hex_array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hex_array_to_hex_str = function (hex_array){
+	var str = "";
+	for(var i in hex_array){
+		var char;
+		if(typeof(hex_array[i]) == "number")char = hex_array[i].toString(16)
+		else char = hex_array[i].toString();
+		str += exports.str_pad(char,2,'0');
+	}
+	return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.str_pad = function(input, length, string) {
+	string = string || '0'; input = input + '';
+	return input.length &gt;= length ? input : new Array(length - input.length + 1).join(string) + input;
+}
+exports.crc_itu_get_verification = function(hex_data){
+	var crc16 = require("crc-itu").crc16;
+	if(typeof(hex_data) == "String")str = hex_data
+	else str = exports.<span class="apidocCodeKeywordSpan">hex_array_to_hex_str</span>(hex_data);
+	return crc16(str, 'hex');
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.hex_to_int" id="apidoc.element.gps-tracking.functions.hex_to_int">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>hex_to_int
+        <span class="apidocSignatureSpan">(hex_char)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hex_to_int = function (hex_char){
+	return parseInt(hex_char,16);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}
+	/* RETRUN AN INTEGER FROM A HEX CHAR OR integer */
+exports.hex_to_int = function(hex_char){
+	return parseInt(hex_char,16);
+}
+exports.sum_hex_array = function(hex_array){
+	var sum = 0;
+	for(var i in hex_array)sum+=exports.<span class="apidocCodeKeywordSpan">hex_to_int</span>(hex_array[i]);
+	return sum;
+}
+exports.hex_array_to_hex_str = function(hex_array){
+	var str = "";
+	for(var i in hex_array){
+		var char;
+		if(typeof(hex_array[i]) == "number")char = hex_array[i].toString(16)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.minute_to_decimal" id="apidoc.element.gps-tracking.functions.minute_to_decimal">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>minute_to_decimal
+        <span class="apidocSignatureSpan">(pos, pos_i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minute_to_decimal = function (pos, pos_i){
+	if(typeof(pos_i) == "undefined")pos_i = "N";
+	var dg = parseInt(pos/100);
+	var minutes = pos-(dg*100);
+	var res = (minutes/60)+dg;
+	return (pos_i.toUpperCase()=="S" || pos_i.toUpperCase()=="W")?res*-1:res;	
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	
+	
+	this.get_ping_data = function(msg_parts){
+		var str = msg_parts.data;
+		var data = {
+			"date"			: str.substr(0,6),
+			"availability"	: str.substr(6,1),
+			"latitude"		: functions.<span class="apidocCodeKeywordSpan">minute_to_decimal</span>(parseFloat(str.substr(7,9)),str
+.substr(16,1)),
+			"longitude"	: functions.minute_to_decimal(parseFloat(str.substr(17,9)),str.substr(27,1)),
+			"speed"			: parseFloat(str.substr(28,5)),
+			"time"			: str.substr(33,6),
+			"orientation"	: str.substr(39,6),
+			"io_state"		: str.substr(45,8),
+			"mile_post"	: str.substr(53,1),
+			"mile_data"	: parseInt(str.substr(54,8),16)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.parse_data" id="apidoc.element.gps-tracking.functions.parse_data">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>parse_data
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse_data = function (data){
+	data = data.replace(/(\r\n|\n|\r)/gm,""); //Remove 3 type of break lines
+	var cmd_start = data.indexOf("B"); //al the incomming messages has a cmd starting with 'B'
+	if(cmd_start &gt; 13)throw "Device ID is longer than 12 chars!";
+	var parts={
+		"start" 		: data.substr(0,1),
+		"device_id" 	: data.substring(1,cmd_start),
+		"cmd" 			: data.substr(cmd_start,4),
+		"data" 			: data.substring(cmd_start+4,data.length-1),
+		"finish" 		: data.substr(data.length-1,1)
+	};
+	return parts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	}
+
+	/****************************************
+	RECEIVING DATA FROM THE DEVICE
+	****************************************/
+	this.on("data",function(data) {
+		msg_parts = this_device.adapter.<span class="apidocCodeKeywordSpan">parse_data</span>(data);
+
+		if(this.getUID() === false &amp;&amp; typeof(msg_parts.device_id) == "undefined"){
+			throw "The adapter doesn't return the device_id and is not defined";
+		}
+
+		if(msg_parts === false) { //something bad happened
+			this_device.do_log("The message (" + data + ") can't be parsed. Discarding...");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.parse_gps_data" id="apidoc.element.gps-tracking.functions.parse_gps_data">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>parse_gps_data
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse_gps_data = function (str){
+	var data = {
+		"date"			: str.substr(0,6),
+		"availability"	: str.substr(6,1),
+		"latitude"		: gps_minute_to_decimal(parseFloat(str.substr(7,9))),
+		"latitude_i"	: str.substr(16,1),
+		"longitude"	: gps_minute_to_decimal(parseFloat(str.substr(17,9))),
+		"longitude_i"	: str.substr(27,1),
+		"speed"			: str.substr(28,5),
+		"time"			: str.substr(33,6),
+		"orientation"	: str.substr(39,6),
+		"io_state"		: str.substr(45,8),
+		"mile_post"	: str.substr(53,1),
+		"mile_data"	: parseInt(str.substr(54,8),16)
+	};
+	return data;	
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.rad" id="apidoc.element.gps-tracking.functions.rad">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>rad
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rad = function (x) {
+  return x * Math.PI / 180;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/*
+@param p1: {lat:X,lng:Y}
+@param p2: {lat:X,lng:Y}
+*/
+exports.get_distance = function(p1, p2) {
+	var R = 6378137; // Earthâ€™s mean radius in meter
+	var dLat = exports.<span class="apidocCodeKeywordSpan">rad</span>(p2.lat - p1.lat);
+	var dLong = exports.rad(p2.lng - p1.lng);
+	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+	Math.cos(exports.rad(p1.lat)) * Math.cos(exports.rad(p2.lat)) *
+	Math.sin(dLong / 2) * Math.sin(dLong / 2);
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+	var d = R * c;
+	return d; // returns the distance in meter
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.send" id="apidoc.element.gps-tracking.functions.send">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>send
+        <span class="apidocSignatureSpan">(socket, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (socket, msg){
+	socket.write(msg);
+	console.log("Sending to "+socket.name+": "+msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}
+	this.authorize =function(){
+		this.send_comand("AP05");
+	}
+	this.run_other = function(cmd,msg_parts){
+		switch(cmd){
+			case "BP00": //Handshake
+				this.device.<span class="apidocCodeKeywordSpan">send</span>(this.format_data(this.device.uid+"AP01HSO"));
+				break;
+		}
+	}
+	
+	this.request_login_to_device = function(){
+		//@TODO: Implement this.	
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.send_to" id="apidoc.element.gps-tracking.functions.send_to">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>send_to
+        <span class="apidocSignatureSpan">(socket, cmd, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send_to = function (socket, cmd, data){
+	if(typeof(socket.device_id) == "undefined")throw "The socket is not paired with a device_id yet";
+	var str = gps_format.start;
+	str += socket.device_id+gps_format.separator+cmd;
+	if(typeof(data) != "undefined")str += gps_format.separator+data;
+	str += gps_format.end;
+	send(socket,str);
+	//Example: (&lt;DEVICE_ID&gt;|&lt;CMD&gt;|&lt;DATA&gt;) - separator: | ,start: (, end: )
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.str_pad" id="apidoc.element.gps-tracking.functions.str_pad">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>str_pad
+        <span class="apidocSignatureSpan">(input, length, string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">str_pad = function (input, length, string) {
+	string = string || '0'; input = input + '';
+	return input.length &gt;= length ? input : new Array(length - input.length + 1).join(string) + input;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		//XXXXYYZZ
+		//XXXX Hex interval for each message in seconds
+		//YYZZ Total time for feedback
+		//YY Hex hours
+		//ZZ Hex minutes
+		var hours = parseInt(duration/3600);
+		var minutes = parseInt((duration-hours*3600)/60);
+		var time = f.<span class="apidocCodeKeywordSpan">str_pad</span>(interval.toString(16),4,'0')+ f.str_pad(hours.toString
+(16),2,'0')+ f.str_pad(minutes.toString(16),2,'0')
+		this.send_comand("AR00",time);
+	}
+	
+	/* INTERNAL FUNCTIONS */
+	
+	this.send_comand = function(cmd,data){
+		var msg = [this.device.uid,cmd,data];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.functions.sum_hex_array" id="apidoc.element.gps-tracking.functions.sum_hex_array">
+        function <span class="apidocSignatureSpan">gps-tracking.functions.</span>sum_hex_array
+        <span class="apidocSignatureSpan">(hex_array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sum_hex_array = function (hex_array){
+	var sum = 0;
+	for(var i in hex_array)sum+=exports.hex_to_int(hex_array[i]);
+	return sum;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gps-tracking.main" id="apidoc.module.gps-tracking.main">module gps-tracking.main</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.main.server" id="apidoc.element.gps-tracking.main.server">
+        function <span class="apidocSignatureSpan">gps-tracking.main.</span>server
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function server(opts, callback) {
+	if (!(this instanceof server))
+		return new server(opts, callback);
+	EventEmitter.call(this);
+	var defaults = {
+		debug:						false,
+		port:						8080,
+		device_adapter:				false
+	};
+
+	//Merge default options with user options
+	this.opts = extend(defaults, opts);
+
+	var thisServer = this;
+	this.devices = [];
+	this.db = false;
+
+	this.server = false;
+	this.availableAdapters = {
+		TK103:		'./adapters/tk103'
+	};
+
+	<span class="apidocCodeCommentSpan">/****************************
+	SOME FUNCTIONS
+	*****************************/
+</span>	/* */
+	this.setAdapter = function(adapter){
+		if (typeof adapter.adapter != 'function')
+			throw 'The adapter needs an adpater() method to start an instance of it';
+		this.device_adapter = adapter;
+	};
+
+	this.getAdapter = function() {
+		return this.device_adapter;
+	};
+
+	this.addAdaptar = function(model, Obj) {
+		this.availableAdapters.push(model);
+	};
+
+	this.init = function(cb) {
+		//Set debug
+		thisServer.setDebug(this.opts.debug);
+
+		/*****************************
+		DEVICE ADAPTER INITIALIZATION
+		******************************/
+		if (thisServer.opts.device_adapter === false)
+			throw 'The app don\'t set the device_adapter to use. Which model is sending data to this server?';
+
+		if (typeof thisServer.opts.device_adapter == 'string') {
+
+			//Check if the selected model has an available adapter registered
+			if (typeof this.availableAdapters[this.opts.device_adapter] == 'undefined')
+				throw 'The class adapter for ' + this.opts.device_adapter + ' doesn\'t exists';
+
+			//Get the adapter
+			var adapterFile = (this.availableAdapters[this.opts.device_adapter]);
+
+			this.setAdapter(require(adapterFile));
+
+		} else {
+			//IF THE APP PASS THE ADEPTER DIRECTLY
+			thisServer.setAdapter(this.opts.device_adapter);
+		}
+
+		thisServer.emit('before_init');
+		if (typeof cb == 'function') cb();
+		thisServer.emit('init');
+
+		/* FINAL INIT MESSAGE */
+		console.log('\n=================================================\nFRESHWORK GPS LISTENER running at port ' + thisServer.opts.port
+ + '\nEXPECTING DEVICE MODEL:  ' + thisServer.getAdapter().model_name + '\n=================================================\n');
+	};
+
+	this.addAdaptar = function(model,Obj){
+		this.adapters.push(model);
+	};
+
+	this.do_log = function (msg,from){
+		//If debug is disabled, return false
+		if(this.getDebug() === false)return false;
+
+		//If from parameter is not set, default is server.
+		if(typeof(from) == "undefined")from = "SERVER";
+
+		msg = "#" + from + ": " + msg;
+		console.log(msg);
+
+	};
+
+	/****************************************
+	SOME SETTERS &amp; GETTERS
+	****************************************/
+	this.setDebug = function(val){
+		this.debug = (val === true);
+	};
+
+	this.getDebug = function(){
+		return this.debug;
+	};
+
+
+
+	//Init app
+	this.init(function(){
+		/*************************************
+		AFTER INITIALIZING THE APP...
+		*************************************/
+		thisServer.server = net.createServer(function (connection) {
+			//Now we are listening!
+
+			//We create an new device and give the an adapter to parse the incomming messages
+			connection.device = new Device(thisServer.getAdapter(),connection,thisServer);
+			thisServer.devices.push(connection);
+
+
+			//Once we receive data...
+			connection.on('data', function (data) {
+				connection.device.emit("data",data);
+			});
+
+			// Remove the device from the list when it leaves
+			connection.on('end', function () {
+				thisServer.devices.splice(thisServer.devices.indexOf(connection), 1);
+				connection.device.emit("disconnected");
+			});
+
+			callback(connection.device,connection);
+
+			connection.device.emit('connected');
+		}).listen(opts.port);
+	});
+
+	/* Search a device by ID */
+	this.find_device = function(device_id){
+		for(var i in this.devices){
+			var dev = this.devices[i].device;
+			if(dev.uid == device_id)return dev;
+		}
+		return false;
+	};
+
+	/* SEND A MESSAGE TO DEVICE ID X */
+	this.send_to = function(device_id,msg){
+		var dev = this.find_device(device_id);
+		dev.send(msg);
+	};
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var options = {
+    'debug'                 : true,
+    'port'                  : 8090,
+    'device_adapter'        : "TK103"
+}
+
+var server = gps.<span class="apidocCodeKeywordSpan">server</span>(options,function(device,connection){
+
+    device.on("login_request",function(device_id,msg_parts){
+
+// Some devices sends a login request before transmitting their position
+// Do some stuff before authenticate the device...
+
+// Accept the login request. You can set false to reject the device.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gps-tracking.server" id="apidoc.module.gps-tracking.server">module gps-tracking.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.server.server" id="apidoc.element.gps-tracking.server.server">
+        function <span class="apidocSignatureSpan">gps-tracking.</span>server
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function server(opts, callback) {
+	if (!(this instanceof server))
+		return new server(opts, callback);
+	EventEmitter.call(this);
+	var defaults = {
+		debug:						false,
+		port:						8080,
+		device_adapter:				false
+	};
+
+	//Merge default options with user options
+	this.opts = extend(defaults, opts);
+
+	var thisServer = this;
+	this.devices = [];
+	this.db = false;
+
+	this.server = false;
+	this.availableAdapters = {
+		TK103:		'./adapters/tk103'
+	};
+
+	<span class="apidocCodeCommentSpan">/****************************
+	SOME FUNCTIONS
+	*****************************/
+</span>	/* */
+	this.setAdapter = function(adapter){
+		if (typeof adapter.adapter != 'function')
+			throw 'The adapter needs an adpater() method to start an instance of it';
+		this.device_adapter = adapter;
+	};
+
+	this.getAdapter = function() {
+		return this.device_adapter;
+	};
+
+	this.addAdaptar = function(model, Obj) {
+		this.availableAdapters.push(model);
+	};
+
+	this.init = function(cb) {
+		//Set debug
+		thisServer.setDebug(this.opts.debug);
+
+		/*****************************
+		DEVICE ADAPTER INITIALIZATION
+		******************************/
+		if (thisServer.opts.device_adapter === false)
+			throw 'The app don\'t set the device_adapter to use. Which model is sending data to this server?';
+
+		if (typeof thisServer.opts.device_adapter == 'string') {
+
+			//Check if the selected model has an available adapter registered
+			if (typeof this.availableAdapters[this.opts.device_adapter] == 'undefined')
+				throw 'The class adapter for ' + this.opts.device_adapter + ' doesn\'t exists';
+
+			//Get the adapter
+			var adapterFile = (this.availableAdapters[this.opts.device_adapter]);
+
+			this.setAdapter(require(adapterFile));
+
+		} else {
+			//IF THE APP PASS THE ADEPTER DIRECTLY
+			thisServer.setAdapter(this.opts.device_adapter);
+		}
+
+		thisServer.emit('before_init');
+		if (typeof cb == 'function') cb();
+		thisServer.emit('init');
+
+		/* FINAL INIT MESSAGE */
+		console.log('\n=================================================\nFRESHWORK GPS LISTENER running at port ' + thisServer.opts.port
+ + '\nEXPECTING DEVICE MODEL:  ' + thisServer.getAdapter().model_name + '\n=================================================\n');
+	};
+
+	this.addAdaptar = function(model,Obj){
+		this.adapters.push(model);
+	};
+
+	this.do_log = function (msg,from){
+		//If debug is disabled, return false
+		if(this.getDebug() === false)return false;
+
+		//If from parameter is not set, default is server.
+		if(typeof(from) == "undefined")from = "SERVER";
+
+		msg = "#" + from + ": " + msg;
+		console.log(msg);
+
+	};
+
+	/****************************************
+	SOME SETTERS &amp; GETTERS
+	****************************************/
+	this.setDebug = function(val){
+		this.debug = (val === true);
+	};
+
+	this.getDebug = function(){
+		return this.debug;
+	};
+
+
+
+	//Init app
+	this.init(function(){
+		/*************************************
+		AFTER INITIALIZING THE APP...
+		*************************************/
+		thisServer.server = net.createServer(function (connection) {
+			//Now we are listening!
+
+			//We create an new device and give the an adapter to parse the incomming messages
+			connection.device = new Device(thisServer.getAdapter(),connection,thisServer);
+			thisServer.devices.push(connection);
+
+
+			//Once we receive data...
+			connection.on('data', function (data) {
+				connection.device.emit("data",data);
+			});
+
+			// Remove the device from the list when it leaves
+			connection.on('end', function () {
+				thisServer.devices.splice(thisServer.devices.indexOf(connection), 1);
+				connection.device.emit("disconnected");
+			});
+
+			callback(connection.device,connection);
+
+			connection.device.emit('connected');
+		}).listen(opts.port);
+	});
+
+	/* Search a device by ID */
+	this.find_device = function(device_id){
+		for(var i in this.devices){
+			var dev = this.devices[i].device;
+			if(dev.uid == device_id)return dev;
+		}
+		return false;
+	};
+
+	/* SEND A MESSAGE TO DEVICE ID X */
+	this.send_to = function(device_id,msg){
+		var dev = this.find_device(device_id);
+		dev.send(msg);
+	};
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var options = {
+    'debug'                 : true,
+    'port'                  : 8090,
+    'device_adapter'        : "TK103"
+}
+
+var server = gps.<span class="apidocCodeKeywordSpan">server</span>(options,function(device,connection){
+
+    device.on("login_request",function(device_id,msg_parts){
+
+// Some devices sends a login request before transmitting their position
+// Do some stuff before authenticate the device...
+
+// Accept the login request. You can set false to reject the device.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.server.super_" id="apidoc.element.gps-tracking.server.super_">
+        function <span class="apidocSignatureSpan">gps-tracking.server.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gps-tracking.tk103" id="apidoc.module.gps-tracking.tk103">module gps-tracking.tk103</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gps-tracking.tk103.adapter" id="apidoc.element.gps-tracking.tk103.adapter">
+        function <span class="apidocSignatureSpan">gps-tracking.tk103.</span>adapter
+        <span class="apidocSignatureSpan">(device)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapter = function (device){
+	if(!(this instanceof adapter)) return new adapter(device);
+	
+	this.format = {"start":"(","end":")","separator":""}
+	this.device = device;
+	
+	<span class="apidocCodeCommentSpan">/*******************************************
+	PARSE THE INCOMING STRING FROM THE DECIVE
+	You must return an object with a least: device_id, cmd and type.
+	return device_id: The device_id
+	return cmd: command from the device.
+	return type: login_request, ping, etc.
+	*******************************************/
+</span>	this.parse_data = function(data){
+		data = data.toString();
+		var cmd_start = data.indexOf("B"); //al the incomming messages has a cmd starting with 'B'
+		if(cmd_start &gt; 13)throw "Device ID is longer than 12 chars!";
+		var parts={
+			"start" 		: data.substr(0,1),
+			"device_id" 	: data.substring(1,cmd_start),//mandatory
+			"cmd" 			: data.substr(cmd_start,4), //mandatory
+			"data" 			: data.substring(cmd_start+4,data.length-1),
+			"finish" 		: data.substr(data.length-1,1)
+		};
+		switch(parts.cmd){
+			case "BP05":
+				parts.action="login_request";	
+				break;
+			case "BR00":
+				parts.action="ping";
+				break;
+			case "BO01":
+				parts.action="alarm";
+				break;
+			default:
+				parts.action="other";
+		}
+		
+		return parts;
+	}
+	this.authorize =function(){
+		this.send_comand("AP05");
+	}
+	this.run_other = function(cmd,msg_parts){
+		switch(cmd){
+			case "BP00": //Handshake
+				this.device.send(this.format_data(this.device.uid+"AP01HSO"));
+				break;
+		}
+	}
+	
+	this.request_login_to_device = function(){
+		//@TODO: Implement this.	
+	}
+	
+	this.receive_alarm = function(msg_parts){
+		//@TODO: implement this
+		
+		//Maybe we can save the gps data too.
+		//gps_data = msg_parts.data.substr(1);
+		alarm_code = msg_parts.data.substr(0,1);
+		alarm = false;
+		switch(alarm_code.toString()){
+			case "0":
+				alarm = {"code":"power_off","msg":"Vehicle Power Off"};
+				break;
+			case "1":
+				alarm = {"code":"accident","msg":"The vehicle suffers an acciden"};
+				break;
+			case "2":
+				alarm = {"code":"sos","msg":"Driver sends a S.O.S."};
+				break;
+			case "3":
+				alarm = {"code":"alarming","msg":"The alarm of the vehicle is activated"};
+				break;
+			case "4":
+				alarm = {"code":"low_speed","msg":"Vehicle is below the min speed setted"};
+				break;
+			case "5":
+				alarm = {"code":"overspeed","msg":"Vehicle is over the max speed setted"};
+				break;
+			case "6":
+				alarm = {"code":"gep_fence","msg":"Out of geo fence"};
+				break;
+		}
+		this.send_comand("AS01",alarm_code.toString());
+		return alarm
+	}
+	
+	
+	this.get_ping_data = function(msg_parts){
+		var str = msg_parts.data;
+		var data = {
+			"date"			: str.substr(0,6),
+			"availability"	: str.substr(6,1),
+			"latitude"		: functions.minute_to_decimal(parseFloat(str.substr(7,9)),str.substr(16,1)),
+			"longitude"	: functions.minute_to_decimal(parseFloat(str.substr(17,9)),str.substr(27,1)),
+			"speed"			: parseFloat(str.substr(28,5)),
+			"time"			: str.substr(33,6),
+			"orientation"	: str.substr(39,6),
+			"io_state"		: str.substr(45,8),
+			"mile_post"	: str.substr(53,1),
+			"mile_data"	: parseInt(str.substr(54,8),16)
+		};
+		var datetime = "20"+data.date.substr(0,2)+"/"+data.date.substr(2,2)+"/"+data.date.substr(4,2);
+		datetime += " "+data.time.substr(0,2)+":"+data.time.substr(2,2)+":"+data.time.substr(4,2)
+		data.datetime=new Date(datetime);
+		res = {
+			latitude		: data.latitude,
+			longitude		: data.longitude,
+			time			: new Date(data.date+" "+data.time),
+			speed			: data.speed,
+			orientation	: data.orientation,
+			mileage			: data.mile_data
+		}
+		return res;	
+	}
+	
+	/* SET REFRESH TIME */
+	this.set_refresh_time = function(interval,duration){
+		//XXXXYYZZ
+		//XXXX Hex interval for each message in seconds
+		//YYZZ Total time for feedback
+		//YY Hex hours
+		//ZZ Hex minutes
+		var hours = parseInt(duration/3600);
+		var minutes = parseInt((duration-hours*3600)/60);
+		var time = f.str_pad(interval.toString(16),4,'0')+ f.str_pad(hours.toString(16),2,'0')+ f.str_pad(minutes.toString(16),2,'0')
+		this.send_comand("AR00",time);
+	}
+	
+	/* INTERNAL FUNCTIONS */
+	
+	this.send_comand = function(cmd,data){
+		var msg = [this.device.uid,cm ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	/* Inherits EventEmitter class */
+	EventEmitter.call(this);
+
+	var this_device 	= this;
+
+	this.connection 	= connection;
+	this.server 		= gps_server;
+	this.adapter		= adapter.<span class="apidocCodeKeywordSpan">adapter</span>(this);
+
+	this.uid = false;
+	this.ip = connection.ip;
+	this.port = connection.port;
+	this.name = false;
+	this.loged = false;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
